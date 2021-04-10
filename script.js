@@ -20,8 +20,9 @@ function nextIssue()
   item = data[Math.floor(Math.random() * data.length)];
   topic = "parentName<br>titleName".replace("titleName", item["titleName"]).replace("parentName", title[item["parentID"]]);
   answer = item["content"].replace(/(\r\n|\n|\r)/gm, "<br>");
+  reg = new RegExp("[\\u4E00-\\u9FFF]+","g");
 
-  if (answer.length < 2)
+  if(!reg.test(answer))
   {
     nextIssue();
     return;
@@ -30,4 +31,3 @@ function nextIssue()
   document.getElementById("Topic").innerHTML = topic;
   document.getElementById("Answer").innerHTML = answer;
 }
-
