@@ -1,16 +1,14 @@
-
-var httpRequest = new XMLHttpRequest();
+var url = "https://raw.githubusercontent.com/Voidmort/UnifiedExaminationExercises/main/Resource/data.json"
 var jsonObject = "";
 
-httpRequest.open('GET', 'https://raw.githubusercontent.com/Voidmort/UnifiedExaminationExercises/main/Resource/data.json', true);
-httpRequest.send()
+Initialization()
 
-httpRequest.onreadystatechange = function getdata() {
-if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-    jsonStr  = httpRequest.responseText;//获取到json字符串，还需解析
-    jsonObject = jQuery.parseJSON(jsonStr);
+function Initialization(){
+  $.get(url, function(data, status){
+    jsonObject = jQuery.parseJSON(data);
     nextIssue()
-  }};
+  });
+}
 
 function nextIssue()
 {
