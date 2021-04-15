@@ -2,7 +2,7 @@ var jsonObject = "";
 var target = "data.json"
 if (document.title == "往届考题")
   target = "previous.json"
-var url = "https://raw.githubusercontent.com/Voidmort/UnifiedExaminationExercises/main/Resource/"+target
+var url = "http://38324.cn/UnifiedExaminationExercises/Resource/"+target
 
 Initialization()
 
