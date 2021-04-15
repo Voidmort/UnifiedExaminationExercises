@@ -8,7 +8,7 @@ Initialization()
 
 function Initialization(){
   $.get(url, function(data, status){
-    jsonObject = jQuery.parseJSON(data);
+    jsonObject = data;//jQuery.parseJSON(data);
     nextIssue()
   });
 }
